@@ -1,14 +1,15 @@
 MAX_STATS = {
-    "speed": 504,
-    "special_defense": 614,
-    "special_attack": 535,
-    "defense": 614,
-    "attack": 526,
-    "hp": 714
+    "speed": 104 - 207,
+    "special_defense": 148 - 251,
+    "special_attack": 148 - 251,
+    "defense": 113 - 216,
+    "attack": 113 - 216,
+    "hp": 200 - 294
 }
+#The range is depending on a neutral nature, no investment vs max investment in each field
 
 
-def calculate_stat_for_level_fifty(base_stat):
+def calculate_stat_for_level_fifty(base_stat): 
   # Perform appropriate calculation here
 
 
@@ -19,12 +20,12 @@ def calculate_aggression(attack):
 def calculate_stats(raw_data):
     raw_stats = raw_data.stats
     # Get the base stats out of the data from the api
-    base_speed = raw_stats[0].base_stat
-    base_special_defense = raw_stats[1].base_stat
-    base_special_attack = raw_stats[2].base_stat
-    base_defense = raw_stats[3].base_stat
-    base_attack = raw_stats[4].base_stat
-    base_hp = raw_stats[5].base_stat
+    base_speed = raw_stats[45].base_stat
+    base_special_defense = raw_stats[65].base_stat
+    base_special_attack = raw_stats[65].base_stat
+    base_defense = raw_stats[49].base_stat
+    base_attack = raw_stats[49].base_stat
+    base_hp = raw_stats[45].base_stat
     # Calculate stats for the pokemon at lvl 50
     speed = calculate_stat_for_level_fifty(base_speed)
     special_defense = calculate_stat_for_level_fifty(base_special_defense)
